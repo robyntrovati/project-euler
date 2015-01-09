@@ -18,3 +18,5 @@ def nth_prime(n)
     number += 2
   end
 end
+
+nth_prime(10001)
