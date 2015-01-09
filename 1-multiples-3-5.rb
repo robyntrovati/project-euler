@@ -14,7 +14,7 @@ end
 
 def sum_multiples(n)
   collect_multiples(n)
-  # @multiples.inject{|sum, x| sum + x}
+  # @multiples.inject { |sum, x| sum + x }
   @multiples.inject(:+)
 end
 
