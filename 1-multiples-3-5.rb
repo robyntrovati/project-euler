@@ -19,4 +19,3 @@ def sum_multiples(n)
 end
 
 sum_multiples(1000)
-# => 233168
