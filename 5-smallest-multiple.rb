@@ -13,7 +13,7 @@
 
 
 def evenly_divisible?(n)
-  (1...20).each do |i|
+  (1..20).each do |i|
     if n % i != 0
       return false
     end
