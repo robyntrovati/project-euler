@@ -14,11 +14,10 @@ end
 
 def sequence_length(n)
   sequence_length = 1
-  current_num = n
-  while current_num > 1
-    next_num = collatz(current_num)
+  while n > 1
+    next_num = collatz(n)
     sequence_length += 1
-    current_num = next_num
+    n = next_num
   end
   sequence_length
 end

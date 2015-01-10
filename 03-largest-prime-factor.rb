@@ -9,9 +9,9 @@ def largest_prime_factor(n)
       factors << divisor
       n /= divisor
     end
-    divisor = divisor + 1
+    divisor += 1
   end
-  factors.last
+  factors[-1]
 end
 
 largest_prime_factor(600851475143)

@@ -6,14 +6,8 @@
 def sum_sqaure_difference(limit)
   numbers = (1...limit)
   squares = []
-
-  numbers.each do |number|
-    squares << number ** 2
-  end
-
-  sum_of_squares = squares.inject(:+)
-  square_of_sum = numbers.inject(:+) ** 2
-  difference = square_of_sum - sum_of_squares
+  numbers.each { |number| squares << number**2 }
+  numbers.inject(:+)**2 - squares.inject(:+)
 end
 
 sum_sqaure_difference(100)

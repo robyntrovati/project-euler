@@ -11,8 +11,7 @@ end
 def nth_prime(n)
   number = 3
   i = 1
- 
-  while true
+  loop do
     i += 1 if prime?(number)
     return number if i == n
     number += 2

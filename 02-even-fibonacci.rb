@@ -12,8 +12,7 @@ def even_fibonacci_sum(limit)
     next_num = (fib_nums[-1] + fib_nums[-2])
   end
 
-  evens = fib_nums.select { |n| n % 2 == 0 }
-  evens.inject(:+)
+  fib_nums.select { |n| n % 2 == 0 }.inject(:+)
 end
 
 even_fibonacci_sum(4000000)

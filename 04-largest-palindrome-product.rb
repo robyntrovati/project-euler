@@ -3,13 +3,11 @@
 
 def largest_palindrome_product
   palindromes = []
-  (100..1000).each do |num|
+  (100..999).each do |num|
     product = num * num.next
     if product = product.to_s.reverse.to_i
       palindromes << product
     end
   end
-  
-  palindromes.sort
-  palindromes[-1]
+  palindromes.sort[-1]
 end
