@@ -19,3 +19,12 @@ def sum(limit)
 end
 
 sum(2000000)
+
+
+# OR
+
+require 'mathn'
+
+def sum_of_primes(limit)
+  Prime.take(limit-1).inject(:+)
+end

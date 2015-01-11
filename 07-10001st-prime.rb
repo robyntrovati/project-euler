@@ -19,3 +19,12 @@ def nth_prime(n)
 end
 
 nth_prime(10001)
+
+
+# OR
+
+require 'mathn'
+
+def nth_prime(n)
+  Prime.take(n)
+end
