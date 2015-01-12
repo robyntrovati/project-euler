@@ -65,4 +65,3 @@ end
 
 
 a = MaximumPath.new(triangle).max_sum
-
