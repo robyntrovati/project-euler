@@ -1,5 +1,6 @@
 # Project Euler 18 - Maximum Path Sum (https://projecteuler.net/problem=18)
 
+
 triangle = <<FUCKERY
 75
 95 64
