@@ -5,11 +5,11 @@
 
 def even_fibonacci_sum(limit)
   fib_nums = [1, 2]
-  next_num = (fib_nums[-1] + fib_nums[-2])
+  next_num = 0
 
   while next_num < limit
-    fib_nums << next_num
     next_num = (fib_nums[-1] + fib_nums[-2])
+    fib_nums << next_num
   end
 
   fib_nums.select { |n| n % 2 == 0 }.inject(:+)

@@ -2,10 +2,7 @@
 
 
 def prime?(number)
-  (2..(Math.sqrt(number))).each do |divisor|
-    return false if number % divisor == 0
-  end
-  true
+  (2..(Math.sqrt(number))).each { |d| return false if number % d == 0 }
 end
  
 def nth_prime(n)

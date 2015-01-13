@@ -2,20 +2,11 @@
 
 
 def prime?(number)
-  (2..(Math.sqrt(number))).each do |divisor|
-    return false if number % divisor == 0
-  end
-  true
+  (2..(Math.sqrt(number))).each { |d| return false if number % d == 0 }
 end
 
 def sum(limit)
-  primes = []
-  (2...limit).each do |number|
-    if prime?(number)
-      primes << number
-    end
-  end
-  primes.inject(:+)
+  (2...limit).select { |n| prime?(n) }.inject(:+)
 end
 
 sum(2000000)

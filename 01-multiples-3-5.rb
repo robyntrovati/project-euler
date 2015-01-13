@@ -2,28 +2,8 @@
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
 
-class SumMultiples
-
-  def initialize(limit)
-    @limit = limit
-    @start = 3
-    @multiples = []
-  end
-
-  def collect_multiples
-    (@start...@limit).select do |n|
-      if n % 3 == 0 || n % 5 == 0
-        @multiples << n
-      end
-    end
-  end
-
-  def sum_multiples
-    collect_multiples
-    @multiples.inject(:+)
-  end
-
+def sum_multiples(limit)
+  (3...limit).select { |n| n % 3 == 0 || n % 5 == 0 }.inject(:+)
 end
 
-a = SumMultiples.new(1000)
-a.sum_multiples
+sum_multiples(1000)
