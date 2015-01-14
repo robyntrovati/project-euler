@@ -4,12 +4,14 @@
 
 
 def largest_palindrome_product
-  palindromes = []
-  (100..999).each do |num|
-    product = num * num.next
-    if product = product.to_s.reverse.to_i
-      palindromes << product
+  largest_product = 0
+  (100..999).each do |num1|
+    (num1..999).each do |num2|
+      product = num1 * num2
+      if product.to_s == product.to_s.reverse && product > largest_product
+        largest_product = product
+      end
     end
   end
-  palindromes.sort[-1]
+  largest_product
 end
