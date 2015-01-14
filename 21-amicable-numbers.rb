@@ -18,5 +18,6 @@ end
 def sum_amicable_under(limit)
   (2...limit).select { |n| amicable?(n) }.inject(:+)
 end
+  
 
-sum_amicable_under(1000)
+sum_amicable_under(10000)

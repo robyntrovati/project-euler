@@ -11,4 +11,4 @@ def factorial_sum(n)
   factorial.inject(:*).to_s.split(//).map { |num| num.to_i }.inject(:+)
 end
 
-factorial(100)
+factorial_sum(100)
