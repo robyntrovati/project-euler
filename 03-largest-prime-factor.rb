@@ -1,8 +1,8 @@
 # The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?
 
 
-def prime?(number)
-  (2..(Math.sqrt(number))).each { |d| return false if number % d == 0 }
+def prime?(n)
+  (2..(Math.sqrt(n))).each { |d| return false if n % d == 0 }
   true
 end
 
