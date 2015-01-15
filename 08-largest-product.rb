@@ -26,9 +26,9 @@ BIG
 # Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
 def largest_product(number_str)
-  # number = number_str.gsub("\n",'').to_i
+  number = number_str.gsub("\n",'').to_i
   largest_product = 0
-  (0..number.to_s.length).each do |i|
+  (0..number.to_s.length-13).each do |i|
     product = number.to_s.slice(i,13).split(//).map { |char| char.to_i }.inject(:*)
     if product > largest_product
       largest_product = product
