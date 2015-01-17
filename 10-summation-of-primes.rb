@@ -11,7 +11,6 @@ end
 
 sum(2000000)
 
-
 # OR
 
 require 'mathn'

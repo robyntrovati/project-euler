@@ -20,7 +20,6 @@ end
 
 nth_prime(10001)
 
-
 # OR
 
 require 'mathn'
