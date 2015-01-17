@@ -22,6 +22,41 @@ FUCKERY
 
 class MaximumPath
 
+  def initialize(triangle)
+    @triangle = triangle.split("\n").map { |row| row.split(' ').map { |n| n.to_i } }
+  end
+
+  def left(i)
+    @triangle[-1][i]
+  end
+
+  def right(i)
+    @triangle[-1][i+1]
+  end
+
+  def max_path
+    until @triangle.length == 1
+      sums = []
+      @triangle[-2].each_with_index do |n,i|
+        if left(i) > right(i)
+          sums << n + left(i)
+        else
+          sums << n + right(i)
+        end
+      end
+      @triangle.pop(2)
+      @triangle << sums
+    end
+    @triangle[0][0]
+  end
+
+end
+
+
+# Greedy algorithm, top down, doesn't work
+
+class MaximumPath
+
   attr_accessor :row_index, :column_index
   
   PATH = []
@@ -55,7 +90,7 @@ class MaximumPath
     end
   end
 
-  def max_sum
+  def max_path
     while row_index <= @triangle.length - 2
       move
     end
@@ -63,6 +98,3 @@ class MaximumPath
   end
 
 end
-
-
-a = MaximumPath.new(triangle).max_sum
