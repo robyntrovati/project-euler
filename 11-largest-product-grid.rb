@@ -1,7 +1,8 @@
 # Project Euler 11 - Largest Product in a Grid (https://projecteuler.net/problem=11)
 
+# not correct
 
-grid = <<HERETHEREEVERYWHEREDOC
+grid_str = <<HERETHEREEVERYWHEREDOC
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -25,20 +26,20 @@ grid = <<HERETHEREEVERYWHEREDOC
 HERETHEREEVERYWHEREDOC
 
 
-def largest_product(grid)
-  formatted_grid = grid.split("\n").map { |row| row.split(' ').map { |n| n.to_i } }
+def largest_product(grid_str)
+  grid = grid_str.split("\n").map { |row| row.split(' ').map { |n| n.to_i } }
   adjacents = [ [-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1] ]
   max_product = 0
 
-  formatted_grid.each_with_index do |row, y|
+  grid.each_with_index do |row, y|
     row.each_with_index do |column, x|
-      adjacents.each do |direction|
+      adjacents.each do |adjacent|
         product = 1
-        (1..4).each do |n|
-          x_coord = n + x * direction[0]
-          y_coord = n + y * direction[1]
-          unless (x_coord < 0 || x_coord >= row.length) || (y_coord < 0 || y_coord >= formatted_grid.length)
-            product *= formatted_grid[y_coord][x_coord]
+        (0..3).each do |n|
+          x_coord = n + (x + adjacent[0])
+          y_coord = n + (y + adjacent[1])
+          unless (x_coord < 0 || x_coord >= row.length) || (y_coord < 0 || y_coord >= grid.length)
+            product *= grid[y_coord][x_coord]
           end
         end
         max_product = product if product > max_product
@@ -48,4 +49,4 @@ def largest_product(grid)
   max_product
 end
 
-largest_product(grid)
+largest_product(grid_str)
