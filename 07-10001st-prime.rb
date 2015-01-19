@@ -4,7 +4,7 @@
 
 
 def prime?(number)
-  (2..(Math.sqrt(number))).each { |d| return false if number % d == 0 }
+  (2..Math.sqrt(number)).each { |d| return false if number % d == 0 }
   true
 end
  
