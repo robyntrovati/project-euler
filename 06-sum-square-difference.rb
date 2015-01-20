@@ -5,10 +5,10 @@
 # Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
 
-def sum_sqaure_difference(limit)
+def sum_square_difference(limit)
   sum_of_squares = (1..limit).inject { |sum, n| sum + n**2 }
   square_of_sum  = (1..limit).inject { |sum, n| sum + n }**2
   square_of_sum - sum_of_squares
 end
 
-sum_sqaure_difference(100)
+sum_square_difference(100)

@@ -5,7 +5,6 @@
 
 def prime?(number)
   (2..Math.sqrt(number)).each { |d| return false if number % d == 0 }
-  true
 end
  
 def nth_prime(n)
@@ -25,5 +24,5 @@ nth_prime(10001)
 require 'mathn'
 
 def nth_prime(n)
-  Prime.take(n)
+  Prime.take(n).last
 end

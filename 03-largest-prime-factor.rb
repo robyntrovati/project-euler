@@ -15,3 +15,11 @@ def largest_prime_factor(n)
 end
 
 largest_prime_factor(600851475143)
+
+# OR
+
+require 'mathn'
+
+def largest_prime_factor(n)
+  n.prime_division[-1][0]
+end
