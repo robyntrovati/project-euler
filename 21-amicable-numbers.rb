@@ -6,13 +6,15 @@
 
 # Evaluate the sum of all the amicable numbers under 10000.
 
-
+# not correct
 def sum_proper_divisors(n)
   (1...n).select { |d| n % d == 0 }.inject(:+)
 end
 
 def amicable?(n)      
-  n == sum_proper_divisors(sum_proper_divisors(n))  
+  a = sum_proper_divisors(n)
+  b = sum_proper_divisors(a)
+  n != a && n == b
 end
 
 def sum_amicable_under(limit)
